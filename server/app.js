@@ -32,10 +32,11 @@ app.use(function (req, res, next) {
 	next();
 });
 
+
 app.get('/cards', function (req, res) {
-
+    
     var modelParams = {};
-
+    
     if (req.query.category) {
     	modelParams.category = req.query.category;
     }
