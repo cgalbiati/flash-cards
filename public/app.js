@@ -28,7 +28,7 @@ app.value('whateverName', [
 ]);
 
 app.factory('FlashCardsFactory', function ($http) {
-    
+
     function getFlashCards (category){
         var queryParams = {};
 
@@ -41,4 +41,15 @@ app.factory('FlashCardsFactory', function ($http) {
     }
 
     return { getFlashCards: getFlashCards };
+});
+
+app.controller('StatsController', function($scope, ScoreFactory){
+  $scope.scores = ScoreFactory;
+});
+
+app.factory('ScoreFactory', function(){
+  return {
+    correct: 0,
+    incorrect: 0
+  };
 });
