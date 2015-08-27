@@ -1,11 +1,17 @@
 * {
   box-sizing: border-box; }
 
+.button-row {
+  float: right;
+  position: fixed;
+  width: 15%;
+}
 .category-button {
   border: 1px solid black;
+  width: 100%;
   background: none;
   padding: 20px;
-  margin-right: 15px;
+  margin: 15px;
   cursor: pointer;
   outline: none; }
   .category-button.active {
@@ -67,6 +73,7 @@
   #statistics:after {
     clear: both; }
   #statistics #scoreboard {
+    position: fixed;
     float: right;
     margin: 0 auto; }
     #statistics #scoreboard h3 {

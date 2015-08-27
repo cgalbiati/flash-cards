@@ -1,5 +1,5 @@
 app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
-
+	$scope.cheat = false;
 
 	$scope.getCards = function (category){
 		FlashCardsFactory.getFlashCards(category)
@@ -9,7 +9,6 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 			console.error(err, err.message);
 		});
 	};
-
 
 	$scope.categories = [
 	    'MongoDB',
@@ -30,6 +29,11 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 	$scope.getCategoryCards = function (category) {
 		$scope.categories.active = category || "all";
 		$scope.getCards(category);
+	};
+
+	$scope.enableCheat = function(){
+		$scope.cheat = !$scope.cheat;
+		console.log('$scope.cheat on?', $scope.cheat);
 	};
 
 	$scope.getCategoryCards();
